@@ -1,0 +1,188 @@
+[
+  {
+    "id": "web-development",
+    "slug": "web-development",
+    "title": {
+      "en": "Web Development",
+      "ar": "تطوير المواقع"
+    },
+    "description": {
+      "en": "Build fast, responsive, and user-friendly websites that drive results and elevate your online presence.",
+      "ar": "بناء مواقع سريعة ومتجاوبة وسهلة الاستخدام تحقق النتائج وترفع من حضورك الرقمي."
+    },
+    "icon": "Code",
+    "features": [
+      {
+        "en": "Custom Website Development",
+        "ar": "تطوير مواقع مخصصة"
+      },
+      {
+        "en": "E-commerce Solutions",
+        "ar": "حلول التجارة الإلكترونية"
+      },
+      {
+        "en": "Responsive Design",
+        "ar": "تصميم متجاوب"
+      },
+      {
+        "en": "Website Maintenance & Support",
+        "ar": "صيانة ودعم المواقع"
+      }
+    ]
+  },
+  {
+    "id": "seo",
+    "slug": "seo",
+    "title": {
+      "en": "SEO",
+      "ar": "تحسين محركات البحث"
+    },
+    "description": {
+      "en": "Boost your search rankings and drive organic traffic with data-driven SEO strategies.",
+      "ar": "عزز ترتيبك في محركات البحث وزد من حركة المرور العضوية باستراتيجيات SEO مدفوعة بالبيانات."
+    },
+    "icon": "Search",
+    "features": [
+      {
+        "en": "Keyword Research & Analysis",
+        "ar": "بحث وتحليل الكلمات المفتاحية"
+      },
+      {
+        "en": "On-Page Optimization",
+        "ar": "تحسين الصفحات"
+      },
+      {
+        "en": "Technical SEO",
+        "ar": "SEO التقني"
+      },
+      {
+        "en": "Link Building & Outreach",
+        "ar": "بناء الروابط والتواصل"
+      }
+    ]
+  },
+  {
+    "id": "content-creation",
+    "slug": "content-creation",
+    "title": {
+      "en": "Content Creation",
+      "ar": "إنشاء المحتوى"
+    },
+    "description": {
+      "en": "Create compelling content that engages your audience and tells your brand story effectively.",
+      "ar": "إنشاء محتوى مقنع يشرك جمهورك ويروي قصة علامتك التجارية بفعالية."
+    },
+    "icon": "FileText",
+    "features": [
+      {
+        "en": "Blog Writing & Articles",
+        "ar": "كتابة المدونات والمقالات"
+      },
+      {
+        "en": "Video Production",
+        "ar": "إنتاج الفيديو"
+      },
+      {
+        "en": "Graphic Design",
+        "ar": "التصميم الجرافيكي"
+      },
+      {
+        "en": "Social Media Content",
+        "ar": "محتوى وسائل التواصل"
+      }
+    ]
+  },
+  {
+    "id": "digital-marketing",
+    "slug": "digital-marketing",
+    "title": {
+      "en": "Digital Marketing",
+      "ar": "التسويق الرقمي"
+    },
+    "description": {
+      "en": "Grow your business with comprehensive digital marketing strategies that deliver measurable results.",
+      "ar": "نمِّ عملك باستراتيجيات تسويق رقمي شاملة تحقق نتائج قابلة للقياس."
+    },
+    "icon": "TrendingUp",
+    "features": [
+      {
+        "en": "Social Media Marketing",
+        "ar": "التسويق عبر وسائل التواصل"
+      },
+      {
+        "en": "PPC Advertising",
+        "ar": "الإعلانات المدفوعة"
+      },
+      {
+        "en": "Email Marketing",
+        "ar": "التسويق عبر البريد الإلكتروني"
+      },
+      {
+        "en": "Analytics & Reporting",
+        "ar": "التحليلات والتقارير"
+      }
+    ]
+  },
+  {
+    "id": "app-development",
+    "slug": "app-development",
+    "title": {
+      "en": "App Development",
+      "ar": "تطوير التطبيقات"
+    },
+    "description": {
+      "en": "Transform your ideas into powerful mobile applications that users love and engage with.",
+      "ar": "حوّل أفكارك إلى تطبيقات جوال قوية يحبها المستخدمون ويتفاعلون معها."
+    },
+    "icon": "Smartphone",
+    "features": [
+      {
+        "en": "iOS App Development",
+        "ar": "تطوير تطبيقات iOS"
+      },
+      {
+        "en": "Android App Development",
+        "ar": "تطوير تطبيقات Android"
+      },
+      {
+        "en": "Cross-Platform Solutions",
+        "ar": "حلول متعددة المنصات"
+      },
+      {
+        "en": "App Maintenance & Updates",
+        "ar": "صيانة وتحديث التطبيقات"
+      }
+    ]
+  },
+  {
+    "id": "visual-branding",
+    "slug": "visual-branding",
+    "title": {
+      "en": "Visual Branding",
+      "ar": "الهوية البصرية"
+    },
+    "description": {
+      "en": "Create a memorable visual identity that captures your brand essence and resonates with your audience.",
+      "ar": "إنشاء هوية بصرية لا تُنسى تجسد جوهر علامتك التجارية وتتردد صداها مع جمهورك."
+    },
+    "icon": "Palette",
+    "features": [
+      {
+        "en": "Logo Design",
+        "ar": "تصميم الشعار"
+      },
+      {
+        "en": "Brand Guidelines",
+        "ar": "إرشادات العلامة التجارية"
+      },
+      {
+        "en": "Visual Identity System",
+        "ar": "نظام الهوية البصرية"
+      },
+      {
+        "en": "Marketing Collateral",
+        "ar": "المواد التسويقية"
+      }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Google",
+    "logo": "/partners/google.svg",
+    "category": "Technology"
+  },
+  {
+    "id": 2,
+    "name": "Meta",
+    "logo": "/partners/meta.svg",
+    "category": "Social Media"
+  },
+  {
+    "id": 3,
+    "name": "Microsoft",
+    "logo": "/partners/microsoft.svg",
+    "category": "Technology"
+  },
+  {
+    "id": 4,
+    "name": "Amazon",
+    "logo": "/partners/amazon.svg",
+    "category": "E-commerce"
+  },
+  {
+    "id": 5,
+    "name": "Shopify",
+    "logo": "/partners/shopify.svg",
+    "category": "E-commerce"
+  },
+  {
+    "id": 6,
+    "name": "Adobe",
+    "logo": "/partners/adobe.svg",
+    "category": "Design"
+  },
+  {
+    "id": 7,
+    "name": "HubSpot",
+    "logo": "/partners/hubspot.svg",
+    "category": "Marketing"
+  },
+  {
+    "id": 8,
+    "name": "Salesforce",
+    "logo": "/partners/salesforce.svg",
+    "category": "CRM"
+  }
+]

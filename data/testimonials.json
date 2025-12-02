@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmed Hassan",
+    "nameAr": "أحمد حسن",
+    "position": "CEO, TechStart",
+    "positionAr": "المدير التنفيذي، تك ستارت",
+    "image": "/testimonials/avatar1.jpg",
+    "rating": 5,
+    "text": "Working with Zynk transformed our digital presence. Their creative approach and data-driven strategies delivered exceptional results beyond our expectations.",
+    "textAr": "العمل مع زينك غيّر تماماً حضورنا الرقمي. نهجهم الإبداعي واستراتيجياتهم المبنية على البيانات حققت نتائج استثنائية فاقت توقعاتنا.",
+    "company": "TechStart",
+    "companyLogo": "/logos/techstart.svg"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Mohamed",
+    "nameAr": "سارة محمد",
+    "position": "Marketing Director, GrowthCo",
+    "positionAr": "مديرة التسويق، جروث كو",
+    "image": "/testimonials/avatar2.jpg",
+    "rating": 5,
+    "text": "The team's expertise in social media marketing is unmatched. They helped us increase our engagement by 300% in just 3 months!",
+    "textAr": "خبرة الفريق في التسويق عبر وسائل التواصل الاجتماعي لا مثيل لها. ساعدونا في زيادة تفاعلنا بنسبة 300٪ في 3 أشهر فقط!",
+    "company": "GrowthCo",
+    "companyLogo": "/logos/growthco.svg"
+  },
+  {
+    "id": 3,
+    "name": "Khaled Ali",
+    "nameAr": "خالد علي",
+    "position": "Founder, E-Shop Plus",
+    "positionAr": "المؤسس، إي شوب بلس",
+    "image": "/testimonials/avatar3.jpg",
+    "rating": 5,
+    "text": "Outstanding service! Their PPC campaigns generated a 400% ROI. Highly recommend for any business looking to scale.",
+    "textAr": "خدمة متميزة! حملات الدفع لكل نقرة حققت عائد استثمار 400٪. أوصي بشدة لأي شركة تتطلع للنمو.",
+    "company": "E-Shop Plus",
+    "companyLogo": "/logos/eshop.svg"
+  },
+  {
+    "id": 4,
+    "name": "Layla Ibrahim",
+    "nameAr": "ليلى إبراهيم",
+    "position": "Brand Manager, StyleHub",
+    "positionAr": "مديرة العلامة التجارية، ستايل هاب",
+    "image": "/testimonials/avatar4.jpg",
+    "rating": 5,
+    "text": "Their branding expertise helped us establish a strong market presence. The creative team is simply brilliant!",
+    "textAr": "خبرتهم في العلامات التجارية ساعدتنا في تأسيس حضور قوي في السوق. الفريق الإبداعي رائع ببساطة!",
+    "company": "StyleHub",
+    "companyLogo": "/logos/stylehub.svg"
+  },
+  {
+    "id": 5,
+    "name": "Omar Youssef",
+    "nameAr": "عمر يوسف",
+    "position": "COO, Digital Wave",
+    "positionAr": "مدير العمليات، ديجيتال ويف",
+    "image": "/testimonials/avatar5.jpg",
+    "rating": 5,
+    "text": "Professional, creative, and results-driven. Zynk is our go-to partner for all digital marketing needs.",
+    "textAr": "محترفون، مبدعون، ومركزون على النتائج. زينك هو شريكنا المفضل لجميع احتياجات التسويق الرقمي.",
+    "company": "Digital Wave",
+    "companyLogo": "/logos/digitalwave.svg"
+  }
+]

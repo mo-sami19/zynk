@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "home": {
+    "badge": "Digital Marketing Excellence",
+    "heroTitle": "Amplify Your Brand with",
+    "heroSubtitle": "Creative Excellence",
+    "heroDescription": "Transform your digital presence with cutting-edge marketing strategies that drive real results. We combine creativity with data-driven insights to elevate your brand.",
+    "getStarted": "Get Started",
+    "viewWork": "View Our Work",
+    "clients": "Happy Clients",
+    "awards": "Awards Won",
+    "projects": "Projects Completed",
+    "satisfaction": "Satisfaction Rate",
+    "servicesTitle": "Our Services",
+    "servicesDescription": "Comprehensive digital marketing solutions tailored to your business needs",
+    "service1Title": "Social Media Marketing",
+    "service1Desc": "Build a powerful social presence and engage your audience with compelling content strategies.",
+    "service2Title": "Content Marketing",
+    "service2Desc": "Create valuable content that attracts, engages, and converts your target audience.",
+    "service3Title": "PPC Advertising",
+    "service3Desc": "Drive targeted traffic and maximize ROI with strategic paid advertising campaigns.",
+    "learnMore": "Learn More",
+    "ctaTitle": "Ready to Transform Your Digital Presence?",
+    "ctaDescription": "Let's create something amazing together. Get in touch with our team today.",
+    "ctaButton": "Start Your Project"
+  },
+  "footer": {
+    "description": "Your trusted partner for digital marketing excellence. We help brands grow through innovative strategies and creative solutions.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About Us",
+    "socialMedia": "Social Media Marketing",
+    "contentMarketing": "Content Marketing",
+    "ppc": "PPC Advertising",
+    "branding": "Branding & Identity",
+    "contact": "Contact Us",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

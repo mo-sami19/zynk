@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ecommerce-redesign",
+    "slug": "ecommerce-redesign",
+    "title": {
+      "en": "E-commerce Platform Redesign",
+      "ar": "إعادة تصميم منصة التجارة الإلكترونية"
+    },
+    "category": "Web Development",
+    "client": "TechStore",
+    "year": "2024",
+    "thumbnail": "/projects/ecommerce-thumb.jpg",
+    "description": {
+      "en": "Complete redesign and development of a modern e-commerce platform with enhanced user experience and conversion optimization.",
+      "ar": "إعادة تصميم وتطوير كاملة لمنصة تجارة إلكترونية حديثة مع تجربة مستخدم محسّنة وتحسين التحويلات."
+    },
+    "results": {
+      "en": [
+        "150% increase in conversion rate",
+        "40% reduction in bounce rate",
+        "200% increase in mobile traffic"
+      ],
+      "ar": [
+        "زيادة 150% في معدل التحويل",
+        "انخفاض 40% في معدل الارتداد",
+        "زيادة 200% في حركة المرور عبر الهاتف المحمول"
+      ]
+    }
+  },
+  {
+    "id": "social-media-campaign",
+    "slug": "social-media-campaign",
+    "title": {
+      "en": "Social Media Campaign for Fashion Brand",
+      "ar": "حملة وسائل التواصل الاجتماعي لعلامة أزياء"
+    },
+    "category": "Social Media",
+    "client": "StyleHub",
+    "year": "2024",
+    "thumbnail": "/projects/social-thumb.jpg",
+    "description": {
+      "en": "Comprehensive social media strategy and campaign execution across multiple platforms to increase brand awareness and engagement.",
+      "ar": "استراتيجية شاملة لوسائل التواصل الاجتماعي وتنفيذ الحملات عبر منصات متعددة لزيادة الوعي بالعلامة التجارية والمشاركة."
+    },
+    "results": {
+      "en": [
+        "500% growth in Instagram followers",
+        "300% increase in engagement rate",
+        "50+ influencer partnerships"
+      ],
+      "ar": [
+        "نمو 500% في متابعي إنستغرام",
+        "زيادة 300% في معدل المشاركة",
+        "أكثر من 50 شراكة مع المؤثرين"
+      ]
+    }
+  },
+  {
+    "id": "brand-identity-startup",
+    "slug": "brand-identity-startup",
+    "title": {
+      "en": "Brand Identity for Tech Startup",
+      "ar": "هوية العلامة التجارية لشركة ناشئة في مجال التكنولوجيا"
+    },
+    "category": "Branding",
+    "client": "InnovateTech",
+    "year": "2023",
+    "thumbnail": "/projects/branding-thumb.jpg",
+    "description": {
+      "en": "Complete brand identity development including logo design, brand guidelines, and visual identity system for a tech startup.",
+      "ar": "تطوير هوية العلامة التجارية الكاملة بما في ذلك تصميم الشعار وإرشادات العلامة التجارية ونظام الهوية البصرية لشركة ناشئة في مجال التكنولوجيا."
+    },
+    "results": {
+      "en": [
+        "Successful brand launch",
+        "Consistent brand recognition",
+        "Award-winning design"
+      ],
+      "ar": [
+        "إطلاق ناجح للعلامة التجارية",
+        "تعرف ثابت على العلامة التجارية",
+        "تصميم حائز على جوائز"
+      ]
+    }
+  },
+  {
+    "id": "content-marketing-saas",
+    "slug": "content-marketing-saas",
+    "title": {
+      "en": "Content Marketing Strategy for SaaS",
+      "ar": "استراتيجية تسويق المحتوى لـ SaaS"
+    },
+    "category": "Content Marketing",
+    "client": "CloudSoft",
+    "year": "2023",
+    "thumbnail": "/projects/content-thumb.jpg",
+    "description": {
+      "en": "Developed and executed a comprehensive content marketing strategy to drive organic traffic and lead generation.",
+      "ar": "تطوير وتنفيذ استراتيجية شاملة لتسويق المحتوى لزيادة حركة المرور العضوية وتوليد العملاء المحتملين."
+    },
+    "results": {
+      "en": [
+        "400% increase in organic traffic",
+        "250% growth in qualified leads",
+        "Top 3 ranking for target keywords"
+      ],
+      "ar": [
+        "زيادة 400% في حركة المرور العضوية",
+        "نمو 250% في العملاء المحتملين المؤهلين",
+        "تصنيف ضمن أفضل 3 للكلمات المفتاحية المستهدفة"
+      ]
+    }
+  },
+  {
+    "id": "ppc-campaign-retail",
+    "slug": "ppc-campaign-retail",
+    "title": {
+      "en": "PPC Campaign for Retail Chain",
+      "ar": "حملة إعلانات مدفوعة لسلسلة بيع بالتجزئة"
+    },
+    "category": "PPC Advertising",
+    "client": "MegaMart",
+    "year": "2024",
+    "thumbnail": "/projects/ppc-thumb.jpg",
+    "description": {
+      "en": "Strategic PPC campaign management across Google Ads and social media platforms to maximize ROI and drive sales.",
+      "ar": "إدارة استراتيجية لحملة الإعلانات المدفوعة عبر إعلانات جوجل ومنصات التواصل الاجتماعي لتعظيم العائد على الاستثمار وزيادة المبيعات."
+    },
+    "results": {
+      "en": [
+        "300% ROI on ad spend",
+        "50% reduction in cost per acquisition",
+        "2M+ impressions generated"
+      ],
+      "ar": [
+        "عائد 300% على الإنفاق الإعلاني",
+        "انخفاض 50% في تكلفة الاكتساب",
+        "أكثر من 2 مليون ظهور"
+      ]
+    }
+  },
+  {
+    "id": "email-marketing-automation",
+    "slug": "email-marketing-automation",
+    "title": {
+      "en": "Email Marketing Automation",
+      "ar": "أتمتة التسويق عبر البريد الإلكتروني"
+    },
+    "category": "Email Marketing",
+    "client": "HealthPlus",
+    "year": "2023",
+    "thumbnail": "/projects/email-thumb.jpg",
+    "description": {
+      "en": "Implemented automated email marketing workflows to nurture leads and increase customer retention.",
+      "ar": "تنفيذ سير عمل آلي للتسويق عبر البريد الإلكتروني لرعاية العملاء المحتملين وزيادة الاحتفاظ بالعملاء."
+    },
+    "results": {
+      "en": [
+        "45% increase in email open rate",
+        "60% improvement in click-through rate",
+        "35% boost in customer retention"
+      ],
+      "ar": [
+        "زيادة 45% في معدل فتح البريد الإلكتروني",
+        "تحسين 60% في معدل النقر",
+        "زيادة 35% في الاحتفاظ بالعملاء"
+      ]
+    }
+  }
+]

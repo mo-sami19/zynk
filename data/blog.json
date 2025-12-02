@@ -1,0 +1,104 @@
+[
+  {
+    "id": "digital-marketing-trends-2024",
+    "slug": "digital-marketing-trends-2024",
+    "title": {
+      "en": "Top Digital Marketing Trends for 2024",
+      "ar": "أهم اتجاهات التسويق الرقمي لعام 2024"
+    },
+    "excerpt": {
+      "en": "Discover the latest trends shaping the digital marketing landscape in 2024 and how to leverage them for your business.",
+      "ar": "اكتشف أحدث الاتجاهات التي تشكل مشهد التسويق الرقمي في عام 2024 وكيفية الاستفادة منها لعملك."
+    },
+    "category": "Digital Marketing",
+    "author": "Sarah Johnson",
+    "date": "2024-01-15",
+    "readTime": "5 min read",
+    "thumbnail": "/blog/trends-2024.jpg"
+  },
+  {
+    "id": "social-media-strategy-guide",
+    "slug": "social-media-strategy-guide",
+    "title": {
+      "en": "The Ultimate Social Media Strategy Guide",
+      "ar": "الدليل النهائي لاستراتيجية وسائل التواصل الاجتماعي"
+    },
+    "excerpt": {
+      "en": "Learn how to create a winning social media strategy that drives engagement and converts followers into customers.",
+      "ar": "تعلم كيفية إنشاء استراتيجية ناجحة لوسائل التواصل الاجتماعي تزيد المشاركة وتحول المتابعين إلى عملاء."
+    },
+    "category": "Social Media",
+    "author": "Mike Chen",
+    "date": "2024-01-10",
+    "readTime": "7 min read",
+    "thumbnail": "/blog/social-strategy.jpg"
+  },
+  {
+    "id": "seo-best-practices",
+    "slug": "seo-best-practices",
+    "title": {
+      "en": "SEO Best Practices for 2024",
+      "ar": "أفضل ممارسات تحسين محركات البحث لعام 2024"
+    },
+    "excerpt": {
+      "en": "Master the latest SEO techniques to improve your website's visibility and drive organic traffic.",
+      "ar": "أتقن أحدث تقنيات تحسين محركات البحث لتحسين ظهور موقعك وزيادة حركة المرور العضوية."
+    },
+    "category": "SEO",
+    "author": "Emma Davis",
+    "date": "2024-01-05",
+    "readTime": "6 min read",
+    "thumbnail": "/blog/seo-practices.jpg"
+  },
+  {
+    "id": "content-marketing-roi",
+    "slug": "content-marketing-roi",
+    "title": {
+      "en": "Measuring Content Marketing ROI",
+      "ar": "قياس عائد الاستثمار في تسويق المحتوى"
+    },
+    "excerpt": {
+      "en": "Discover effective methods to measure and improve your content marketing return on investment.",
+      "ar": "اكتشف طرقاً فعالة لقياس وتحسين عائد الاستثمار في تسويق المحتوى."
+    },
+    "category": "Content Marketing",
+    "author": "David Wilson",
+    "date": "2023-12-28",
+    "readTime": "8 min read",
+    "thumbnail": "/blog/content-roi.jpg"
+  },
+  {
+    "id": "email-marketing-automation",
+    "slug": "email-marketing-automation",
+    "title": {
+      "en": "Email Marketing Automation: A Complete Guide",
+      "ar": "أتمتة التسويق عبر البريد الإلكتروني: دليل كامل"
+    },
+    "excerpt": {
+      "en": "Learn how to automate your email marketing campaigns to save time and increase conversions.",
+      "ar": "تعلم كيفية أتمتة حملات التسويق عبر البريد الإلكتروني لتوفير الوقت وزيادة التحويلات."
+    },
+    "category": "Email Marketing",
+    "author": "Lisa Anderson",
+    "date": "2023-12-20",
+    "readTime": "6 min read",
+    "thumbnail": "/blog/email-automation.jpg"
+  },
+  {
+    "id": "ppc-campaign-optimization",
+    "slug": "ppc-campaign-optimization",
+    "title": {
+      "en": "PPC Campaign Optimization Tips",
+      "ar": "نصائح لتحسين حملات الإعلانات المدفوعة"
+    },
+    "excerpt": {
+      "en": "Maximize your PPC campaign performance with these proven optimization strategies.",
+      "ar": "عظّم أداء حملاتك الإعلانية المدفوعة باستخدام استراتيجيات التحسين المثبتة هذه."
+    },
+    "category": "PPC",
+    "author": "Tom Martinez",
+    "date": "2023-12-15",
+    "readTime": "5 min read",
+    "thumbnail": "/blog/ppc-optimization.jpg"
+  }
+]
