@@ -131,7 +131,7 @@ export function TestimonialsPartnersSection() {
 
                     {/* Testimonial Text */}
                     <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-                      &ldquo;{testimonial[locale === 'en' ? 'text' : 'textAr']}&rdquo;
+                      "{testimonial[locale === 'en' ? 'text' : 'textAr']}"
                     </p>
 
                     {/* Author Info */}
