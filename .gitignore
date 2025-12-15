@@ -49,3 +49,6 @@ next-env.d.ts
 /backend-zynk
 /zynk-admin
 /zynk-webstie
+
+# Exclude large ZIP files
+*.zip
