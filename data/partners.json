@@ -1,50 +1,50 @@
 [
   {
     "id": 1,
-    "name": "Google",
-    "logo": "/partners/google.svg",
-    "category": "Technology"
+    "name": "Coedla",
+    "logo": "/images/our_Pratners/coedla.png",
+    "category": "Partner"
   },
   {
     "id": 2,
-    "name": "Meta",
-    "logo": "/partners/meta.svg",
-    "category": "Social Media"
+    "name": "Kogeart",
+    "logo": "/images/our_Pratners/kogeart.png",
+    "category": "Partner"
   },
   {
     "id": 3,
-    "name": "Microsoft",
-    "logo": "/partners/microsoft.svg",
-    "category": "Technology"
+    "name": "Partner",
+    "logo": "/images/our_Pratners/logo 10.png",
+    "category": "Partner"
   },
   {
     "id": 4,
-    "name": "Amazon",
-    "logo": "/partners/amazon.svg",
-    "category": "E-commerce"
+    "name": "Partner",
+    "logo": "/images/our_Pratners/logo.avif",
+    "category": "Partner"
   },
   {
     "id": 5,
-    "name": "Shopify",
-    "logo": "/partners/shopify.svg",
-    "category": "E-commerce"
+    "name": "Lynx",
+    "logo": "/images/our_Pratners/lynx.png",
+    "category": "Partner"
   },
   {
     "id": 6,
-    "name": "Adobe",
-    "logo": "/partners/adobe.svg",
-    "category": "Design"
+    "name": "Nirhlyaa",
+    "logo": "/images/our_Pratners/nirhlyaa.png",
+    "category": "Partner"
   },
   {
     "id": 7,
-    "name": "HubSpot",
-    "logo": "/partners/hubspot.svg",
-    "category": "Marketing"
+    "name": "Seres",
+    "logo": "/images/our_Pratners/seres.png",
+    "category": "Partner"
   },
   {
     "id": 8,
-    "name": "Salesforce",
-    "logo": "/partners/salesforce.svg",
-    "category": "CRM"
+    "name": "Redmeat",
+    "logo": "/images/our_Pratners/redmeat.png",
+    "category": "Partner"
   }
 ]

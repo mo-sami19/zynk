@@ -50,26 +50,21 @@ export function FloatingActionButtons() {
 
   const itemVariants = {
     hidden: { 
-      scale: 0,
       opacity: 0,
-      rotate: -180,
+      y: 20,
     },
     visible: { 
-      scale: 1,
       opacity: 1,
-      rotate: 0,
+      y: 0,
       transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
+        duration: 0.2,
       },
     },
     exit: {
-      scale: 0,
       opacity: 0,
-      rotate: 180,
+      y: 20,
       transition: {
-        duration: 0.2,
+        duration: 0.15,
       },
     },
   };
@@ -120,7 +115,7 @@ export function FloatingActionButtons() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: locale === 'ar' ? -20 : 20 }}
                     className={`absolute ${locale === 'ar' ? 'right-full mr-4' : 'left-full ml-4'} top-1/2 -translate-y-1/2 
-                      bg-gradient-to-br from-dark/95 to-dark/90 backdrop-blur-md text-white px-5 py-2.5 rounded-xl 
+                      bg-gradient-to-br from-dark/95 to-dark/90 bg-dark/90 text-white px-5 py-2.5 rounded-xl 
                       whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300
                       border border-primary/30 shadow-2xl font-medium`}
                   >

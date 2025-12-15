@@ -2,8 +2,8 @@
 
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -49,7 +49,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               {t('description')}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -101,16 +101,16 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
             <ul className="space-y-3">
-              <li className="flex items-start space-x-3 text-sm text-muted-foreground">
-                <Mail size={18} className="mt-0.5 text-primary" />
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <Mail size={18} className="mt-0.5 text-primary flex-shrink-0" />
                 <span>info@zynk.agency</span>
               </li>
-              <li className="flex items-start space-x-3 text-sm text-muted-foreground">
-                <Phone size={18} className="mt-0.5 text-primary" />
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <Phone size={18} className="mt-0.5 text-primary flex-shrink-0" />
                 <span>+1 (555) 123-4567</span>
               </li>
-              <li className="flex items-start space-x-3 text-sm text-muted-foreground">
-                <MapPin size={18} className="mt-0.5 text-primary" />
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <MapPin size={18} className="mt-0.5 text-primary flex-shrink-0" />
                 <span>123 Digital Street, Tech City, TC 12345</span>
               </li>
             </ul>
@@ -123,7 +123,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} ZYNK. {t('rights')}
             </p>
-            <div className="flex space-x-6">
+            <div className="flex gap-6">
               <Link href={`/${locale}/privacy`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t('privacy')}
               </Link>

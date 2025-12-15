@@ -1,0 +1,22 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow all public content
+Allow: /en/
+Allow: /ar/
+Allow: /images/
+Allow: /public/
+
+# Crawl delay
+Crawl-delay: 0
+
+# Sitemap
+Sitemap: https://zynk-adv.com/sitemap.xml
+Sitemap: https://zynk-adv.com/en/sitemap.xml
+Sitemap: https://zynk-adv.com/ar/sitemap.xml

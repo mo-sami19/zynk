@@ -10,8 +10,8 @@
   },
   "home": {
     "badge": "Digital Marketing Excellence",
-    "heroTitle": "Amplify Your Brand with",
-    "heroSubtitle": "Creative Excellence",
+    "heroTitle": "Elevate Your Brand with",
+    "heroSubtitle": "Creative Innovation",
     "heroDescription": "Transform your digital presence with cutting-edge marketing strategies that drive real results. We combine creativity with data-driven insights to elevate your brand.",
     "getStarted": "Get Started",
     "viewWork": "View Our Work",
@@ -30,7 +30,12 @@
     "learnMore": "Learn More",
     "ctaTitle": "Ready to Transform Your Digital Presence?",
     "ctaDescription": "Let's create something amazing together. Get in touch with our team today.",
-    "ctaButton": "Start Your Project"
+    "ctaButton": "Start Your Project",
+    "startProject": "Start Your Project",
+    "exploreServices": "Explore Services",
+    "awardWinning": "Award Winning Agency",
+    "trustedByHundreds": "Trusted by 500+ Clients",
+    "fastDelivery": "Fast & Reliable Delivery"
   },
   "footer": {
     "description": "Your trusted partner for digital marketing excellence. We help brands grow through innovative strategies and creative solutions.",

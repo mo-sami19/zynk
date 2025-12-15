@@ -24,6 +24,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env.production
+.env.development
+
+# Keep example file
+!.env.example
 
 # vercel
 .vercel
@@ -31,3 +36,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.clinerules/byterover-rules.md
+.kilocode/rules/byterover-rules.md
+.roo/rules/byterover-rules.md
+.windsurf/rules/byterover-rules.md
+.cursor/rules/byterover-rules.mdc
+.kiro/steering/byterover-rules.md
+.qoder/rules/byterover-rules.md
+.augment/rules/byterover-rules.md
+
+# Exclude specific project folders
+/backend-zynk
+/zynk-admin
+/zynk-webstie

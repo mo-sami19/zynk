@@ -5,12 +5,41 @@ import testimonialsData from '@/data/testimonials.json';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Quote, Sparkles, Star, TrendingUp } from 'lucide-react';
 import { useLocale } from 'next-intl';
-import { useRef, useState } from 'react';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 export function TestimonialsPartnersSection() {
   const locale = useLocale();
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const sectionRef = useRef(null);
+  const isRTL = locale === 'ar';
+  const [[page, direction], setPage] = useState([0, 0]);
+  
+  const paginate = (newDirection: number) => {
+    const newIndex = (activeTestimonial + newDirection + testimonialsData.length) % testimonialsData.length;
+    setActiveTestimonial(newIndex);
+    setPage([newIndex, newDirection]);
+  };
+  
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        setActiveTestimonial((prev) => {
+          const newIndex = (prev + (isRTL ? 1 : -1) + testimonialsData.length) % testimonialsData.length;
+          return newIndex;
+        });
+      } else if (e.key === 'ArrowRight') {
+        setActiveTestimonial((prev) => {
+          const newIndex = (prev + (isRTL ? -1 : 1) + testimonialsData.length) % testimonialsData.length;
+          return newIndex;
+        });
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isRTL]);
   
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -25,14 +54,8 @@ export function TestimonialsPartnersSection() {
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
-        <motion.div
-          style={{ y }}
-          className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl"
-        />
-        <motion.div
-          style={{ y: useTransform(scrollYProgress, [0, 1], [-100, 100]) }}
-          className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl"
-        />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full" />
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(242,255,88,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(242,255,88,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
@@ -71,7 +94,16 @@ export function TestimonialsPartnersSection() {
 
         {/* Testimonials Carousel - 3D Card Stack */}
         <div className="relative max-w-6xl mx-auto mb-32">
-          <div className="relative h-[500px] flex items-center justify-center">
+          {/* Swipe Hint */}
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: [1, 0.5, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-center mb-4 text-sm text-muted-foreground"
+          >
+            {locale === 'en' ? '← Swipe or use arrow keys →' : '→ اسحب أو استخدم الأسهم ←'}
+          </motion.div>
+          <div className="relative h-[500px] flex items-center justify-center overflow-hidden">
             {testimonialsData.map((testimonial, index) => {
               const offset = index - activeTestimonial;
               const isActive = index === activeTestimonial;
@@ -79,7 +111,7 @@ export function TestimonialsPartnersSection() {
               return (
                 <motion.div
                   key={testimonial.id}
-                  className="absolute w-full max-w-3xl"
+                  className="absolute w-full max-w-3xl cursor-grab active:cursor-grabbing"
                   initial={false}
                   animate={{
                     x: `${offset * 100}%`,
@@ -96,6 +128,18 @@ export function TestimonialsPartnersSection() {
                   style={{
                     transformStyle: "preserve-3d",
                     perspective: 1000,
+                  }}
+                  drag={isActive ? "x" : false}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(e, { offset, velocity }) => {
+                    const swipe = Math.abs(offset.x) * velocity.x;
+                    
+                    if (swipe < -10000) {
+                      paginate(1);
+                    } else if (swipe > 10000) {
+                      paginate(-1);
+                    }
                   }}
                 >
                   <div className={`glass-card p-8 md:p-12 rounded-3xl border-2 transition-all duration-300 ${
@@ -194,22 +238,20 @@ export function TestimonialsPartnersSection() {
 
           {/* Navigation Arrows */}
           <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4 pointer-events-none">
-            <motion.button
+            <button
               onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length)}
-              className="w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 flex items-center justify-center text-dark hover:bg-primary/40 transition-all pointer-events-auto"
-              whileHover={{ scale: 1.1, x: -5 }}
-              whileTap={{ scale: 0.9 }}
+              className="w-12 h-12 rounded-full bg-primary/30 border border-primary/30 flex items-center justify-center text-dark hover:bg-primary/50 transition-colors pointer-events-auto text-xl font-bold"
+              aria-label={isRTL ? 'التالي' : 'Previous'}
             >
-              ←
-            </motion.button>
-            <motion.button
+              {isRTL ? '→' : '←'}
+            </button>
+            <button
               onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonialsData.length)}
-              className="w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 flex items-center justify-center text-dark hover:bg-primary/40 transition-all pointer-events-auto"
-              whileHover={{ scale: 1.1, x: 5 }}
-              whileTap={{ scale: 0.9 }}
+              className="w-12 h-12 rounded-full bg-primary/30 border border-primary/30 flex items-center justify-center text-dark hover:bg-primary/50 transition-colors pointer-events-auto text-xl font-bold"
+              aria-label={isRTL ? 'السابق' : 'Next'}
             >
               →
-            </motion.button>
+            </button>
           </div>
         </div>
 
@@ -248,7 +290,7 @@ export function TestimonialsPartnersSection() {
             <motion.div
               className="flex gap-12"
               animate={{
-                x: [0, -1920],
+                x: isRTL ? [0, 1920] : [0, -1920],
               }}
               transition={{
                 x: {
@@ -262,11 +304,16 @@ export function TestimonialsPartnersSection() {
               {[...partnersData, ...partnersData, ...partnersData].map((partner, index) => (
                 <motion.div
                   key={`${partner.id}-${index}`}
-                  className="flex-shrink-0 w-48 h-24 glass-card rounded-2xl flex items-center justify-center p-6 border border-white/10 hover:border-primary/50 transition-all group"
+                  className="flex-shrink-0 w-48 h-24 glass-card rounded-2xl flex items-center justify-center p-4 border border-white/10 hover:border-primary/50 transition-all group"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="text-2xl font-bold text-white/60 group-hover:text-white transition-colors">
-                    {partner.name}
+                  <div className="relative w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      fill
+                      className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
                 </motion.div>
               ))}
