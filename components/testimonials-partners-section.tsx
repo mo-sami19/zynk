@@ -197,9 +197,9 @@ export function TestimonialsPartnersSection() {
                         />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-white">
+                        <h3 className="text-lg font-bold text-white">
                           {testimonial[locale === 'en' ? 'name' : 'nameAr']}
-                        </h4>
+                        </h3>
                         <p className="text-sm text-muted-foreground">
                           {testimonial[locale === 'en' ? 'position' : 'positionAr']}
                         </p>
@@ -220,18 +220,21 @@ export function TestimonialsPartnersSection() {
               <motion.button
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
-                className={`relative h-2 rounded-full transition-all ${
-                  index === activeTestimonial ? 'w-12 bg-primary' : 'w-2 bg-white/20'
-                }`}
+                className="relative w-12 h-12 rounded-full flex items-center justify-center transition-all"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label={`${locale === 'en' ? 'Go to testimonial' : 'انتقل إلى الشهادة'} ${index + 1}`}
               >
-                {index === activeTestimonial && (
-                  <motion.div
-                    layoutId="activeDot"
-                    className="absolute inset-0 bg-primary rounded-full"
-                  />
-                )}
+                <span className={`rounded-full transition-all ${
+                  index === activeTestimonial ? 'w-8 h-2 bg-primary' : 'w-2 h-2 bg-white/20'
+                }`}>
+                  {index === activeTestimonial && (
+                    <motion.span
+                      layoutId="activeDot"
+                      className="block w-full h-full bg-primary rounded-full"
+                    />
+                  )}
+                </span>
               </motion.button>
             ))}
           </div>

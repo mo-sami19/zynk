@@ -1,0 +1,15 @@
+# Modern browsers only - removes legacy polyfills
+# This improves performance by reducing bundle size
+
+# Production
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+not IE 11
+not op_mini all
+
+# Development
+last 1 chrome version
+last 1 firefox version
+last 1 safari version
