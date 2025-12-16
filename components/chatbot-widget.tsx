@@ -3,10 +3,11 @@
 import { chatbotApi, ChatbotResponse } from '@/lib/api';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Brain, Loader2, MessageCircle, Phone, Send, Sparkles, X } from 'lucide-react';
+import { Brain, MessageCircle, Phone, Sparkles, X } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { ChatInput } from './chat-input';
 
 interface Message {
   role: 'user' | 'bot';
@@ -42,7 +43,6 @@ export function ChatbotWidget() {
   });
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
   const hasInitialized = useRef(false);
 
   const scrollToBottom = useCallback(() => {
@@ -105,9 +105,7 @@ export function ChatbotWidget() {
     }
   }, [isOpen, messages.length, isLoading, startChat]);
 
-  useEffect(() => {
-    if (isOpen && !isLoading) inputRef.current?.focus();
-  }, [isOpen, isLoading]);
+  // Focus is now handled by ChatInput component internally
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -383,7 +381,8 @@ export function ChatbotWidget() {
               "inset-0 sm:inset-auto",
               "sm:bottom-24 md:bottom-28",
               "sm:rounded-2xl md:rounded-3xl",
-              isRTL ? "sm:right-4 md:right-8" : "sm:left-4 md:left-8"
+              "transition-all duration-500 ease-in-out",
+              isRTL ? "sm:right-4 md:right-8 left-auto" : "sm:left-4 md:left-8 right-auto"
             )}
             style={{
               willChange: "transform, opacity",
@@ -613,48 +612,16 @@ export function ChatbotWidget() {
                   background: 'linear-gradient(180deg, rgba(242, 255, 88, 0.05) 0%, rgba(10, 10, 10, 1) 100%)'
                 }}
               >
-                <form onSubmit={handleSubmit} className="p-3 sm:p-4 flex gap-2">
-                  <input
-                    ref={inputRef}
-                    type="text"
+                <div className="p-3 sm:p-4">
+                  <ChatInput
                     value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
+                    onChange={setInputValue}
+                    onSend={() => sendMessage(inputValue)}
                     placeholder={isRTL ? 'اكتب رسالتك...' : 'Type your message...'}
-                    className="flex-1 text-white placeholder-white/40 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-base focus:outline-none transition-all"
-                    style={{ 
-                      fontSize: '16px',
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(242, 255, 88, 0.3)',
-                      boxShadow: '0 0 0 0 rgba(242, 255, 88, 0)'
-                    }}
-                    onFocus={(e) => {
-                      e.target.style.border = '1px solid rgba(242, 255, 88, 0.4)';
-                      e.target.style.boxShadow = '0 0 20px rgba(242, 255, 88, 0.2)';
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.border = '1px solid rgba(242, 255, 88, 0.15)';
-                      e.target.style.boxShadow = '0 0 0 0 rgba(242, 255, 88, 0)';
-                    }}
                     disabled={isLoading}
-                    autoComplete="off"
-                    autoCorrect="off"
-                    autoCapitalize="off"
-                    spellCheck="false"
+                    isRTL={isRTL}
                   />
-                  <motion.button
-                    type="submit"
-                    disabled={isLoading || !inputValue.trim()}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 sm:w-11 sm:h-11 text-dark rounded-xl flex items-center justify-center transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{
-                      background: 'linear-gradient(135deg, #f2ff58 0%, #e8f542 100%)',
-                      boxShadow: '0 4px 20px rgba(242, 255, 88, 0.4), 0 0 40px rgba(242, 255, 88, 0.2)'
-                    }}
-                  >
-                    {isLoading ? <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" /> : <Send className={cn("w-4 h-4 sm:w-5 sm:h-5", isRTL && "rotate-180")} />}
-                  </motion.button>
-                </form>
+                </div>
                 <div className="px-3 sm:px-4 pb-2 sm:pb-3 text-center">
                   <p className="text-white/30 text-[9px] sm:text-[10px] font-medium">
                     {isRTL ? 'مدعوم بواسطة' : 'Powered by'} <span className="text-primary font-bold">Zynk ⚡</span>

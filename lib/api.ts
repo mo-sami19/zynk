@@ -409,6 +409,29 @@ export const partnersApi = {
 export const contactApi = {
   /** Submit a contact form */
   async submit(data: ContactMessage): Promise<ApiResponse<{ id: number }>> {
+    // Security: Validate input lengths to prevent spam/attacks
+    const MAX_NAME_LENGTH = 100;
+    const MAX_EMAIL_LENGTH = 255;
+    const MAX_PHONE_LENGTH = 20;
+    const MAX_SUBJECT_LENGTH = 200;
+    const MAX_MESSAGE_LENGTH = 1000;
+    
+    if (data.name.length > MAX_NAME_LENGTH) {
+      throw new Error(`Name too long. Maximum ${MAX_NAME_LENGTH} characters allowed.`);
+    }
+    if (data.email.length > MAX_EMAIL_LENGTH) {
+      throw new Error(`Email too long. Maximum ${MAX_EMAIL_LENGTH} characters allowed.`);
+    }
+    if (data.phone && data.phone.length > MAX_PHONE_LENGTH) {
+      throw new Error(`Phone too long. Maximum ${MAX_PHONE_LENGTH} characters allowed.`);
+    }
+    if (data.subject.length > MAX_SUBJECT_LENGTH) {
+      throw new Error(`Subject too long. Maximum ${MAX_SUBJECT_LENGTH} characters allowed.`);
+    }
+    if (data.message.length > MAX_MESSAGE_LENGTH) {
+      throw new Error(`Message too long. Maximum ${MAX_MESSAGE_LENGTH} characters allowed.`);
+    }
+    
     return fetchApi('/v1/contact', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -454,6 +477,12 @@ export const chatbotApi = {
     message?: string;
     language?: 'en' | 'ar';
   }): Promise<ChatbotResponse> {
+    // Security: Validate message length before sending to prevent spam/attacks
+    const MAX_MESSAGE_LENGTH = 500;
+    if (params.message && params.message.length > MAX_MESSAGE_LENGTH) {
+      throw new Error(`Message too long. Maximum ${MAX_MESSAGE_LENGTH} characters allowed.`);
+    }
+    
     return fetchApi('/v1/chatbot', {
       method: 'POST',
       body: JSON.stringify(params),
