@@ -1,17 +1,17 @@
 'use client';
 
 import {
-    api,
-    ContactMessage,
-    Partner,
-    Post,
-    PricingPlan,
-    Project,
-    SeoData,
-    Service,
-    Settings,
-    TeamMember,
-    Testimonial,
+  api,
+  ContactMessage,
+  Partner,
+  Post,
+  PricingPlan,
+  Project,
+  SeoData,
+  Service,
+  Settings,
+  TeamMember,
+  Testimonial,
 } from '@/lib/api';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -149,9 +149,19 @@ export function usePosts(params?: {
   const fetch = useCallback(async () => {
     setState(prev => ({ ...prev, loading: true, error: null }));
     try {
+      console.log('📰 Fetching posts from API...');
+      console.log('  Parameters:', { category, tag, search, page, per_page: perPage });
+      
       const response = await api.posts.getAll({ category, tag, search, page, per_page: perPage });
+      
+      console.log('✅ Posts API response received:');
+      console.log('  Total posts:', response.data.length);
+      console.log('  Posts data:', response.data);
+      console.log('  Meta:', response.meta);
+      
       setState({ data: response.data, meta: response.meta, loading: false, error: null });
     } catch (error) {
+      console.error('❌ Error fetching posts:', error);
       setState({ data: [], meta: null, loading: false, error: error as Error });
     }
   }, [category, tag, search, page, perPage]);

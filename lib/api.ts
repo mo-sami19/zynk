@@ -241,6 +241,11 @@ async function fetchApi<T>(
 ): Promise<T> {
   const url = `${API_BASE_URL}${endpoint}`;
   
+  console.log('🌐 Website API Request:');
+  console.log('  API_BASE_URL:', API_BASE_URL);
+  console.log('  Full URL:', url);
+  console.log('  Endpoint:', endpoint);
+  
   const defaultHeaders: HeadersInit = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
@@ -254,12 +259,18 @@ async function fetchApi<T>(
     },
   });
 
+  console.log('  Response status:', response.status);
+
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
+    console.error('  ❌ API Error:', error);
     throw new Error(error.message || `API error: ${response.status}`);
   }
 
-  return response.json();
+  const data = await response.json();
+  console.log('  ✅ Response data:', data);
+  
+  return data;
 }
 
 // ============================================================================
