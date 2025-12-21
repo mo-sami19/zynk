@@ -52,6 +52,22 @@ const nextConfig = {
       },
     ];
   },
+  // Redirects for www to non-www (301 permanent redirect)
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.zynk-adv.com',
+          },
+        ],
+        destination: 'https://zynk-adv.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     unoptimized: false,
     formats: ['image/webp', 'image/avif'],

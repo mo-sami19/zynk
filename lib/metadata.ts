@@ -39,10 +39,15 @@ export function generatePageMetadata({
     authors: authors?.map(name => ({ name })),
     icons: {
       icon: [
-        { url: '/zynk.png', type: 'image/png' },
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       ],
       apple: [
-        { url: '/zynk.png', type: 'image/png' },
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ],
+      other: [
+        { rel: 'manifest', url: '/site.webmanifest' },
       ],
     },
     openGraph: {
@@ -107,13 +112,13 @@ export function generatePageMetadata({
 
 export const defaultMetadata = {
   en: {
-    title: 'Zynk - Digital Marketing Agency | Think Big, Zynk Bigger',
-    description: 'Transform your digital presence with Zynk. We offer comprehensive digital marketing solutions including SEO, social media marketing, web development, and branding services.',
-    keywords: 'digital marketing, SEO, social media marketing, web development, branding, content marketing, digital agency, marketing strategy',
+    title: 'ZYNK Advertising - Digital Marketing Agency in Egypt & Middle East | Arab World',
+    description: 'ZYNK Advertising is a leading digital marketing and advertising agency serving Egypt, UAE, Saudi Arabia, and the entire Arab World. We deliver SEO, social media marketing, performance marketing, web development, and branding services across Cairo, Dubai, Riyadh, and the Middle East region.',
+    keywords: 'ZYNK Advertising, digital marketing agency Egypt, advertising agency Middle East, social media marketing Arab World, SEO services UAE, performance marketing Saudi Arabia, branding agency GCC, web development Egypt, digital agency Dubai, marketing agency Cairo, advertising Riyadh, digital marketing Kuwait, marketing Qatar, advertising Bahrain, digital agency Oman, marketing Jordan, advertising Lebanon, digital marketing Morocco',
   },
   ar: {
-    title: 'زينك - وكالة التسويق الرقمي | فكر كبير، زينك أكبر',
-    description: 'حوّل حضورك الرقمي مع زينك. نقدم حلول تسويق رقمي شاملة تشمل تحسين محركات البحث، التسويق عبر وسائل التواصل الاجتماعي، تطوير المواقع، وخدمات العلامات التجارية.',
-    keywords: 'التسويق الرقمي, تحسين محركات البحث, التسويق عبر وسائل التواصل الاجتماعي, تطوير المواقع, العلامات التجارية, تسويق المحتوى, وكالة رقمية, استراتيجية التسويق',
+    title: 'زينك للإعلان - وكالة التسويق الرقمي في مصر والشرق الأوسط | الوطن العربي',
+    description: 'زينك للإعلان هي وكالة تسويق رقمي وإعلان رائدة تخدم مصر والإمارات والسعودية والوطن العربي بأكمله. نقدم خدمات تحسين محركات البحث، التسويق عبر وسائل التواصل الاجتماعي، التسويق بالأداء، تطوير المواقع، والعلامات التجارية في القاهرة ودبي والرياض ومنطقة الشرق الأوسط.',
+    keywords: 'زينك للإعلان, وكالة تسويق رقمي مصر, وكالة إعلان الشرق الأوسط, تسويق وسائل التواصل الاجتماعي الوطن العربي, خدمات SEO الإمارات, تسويق بالأداء السعودية, وكالة علامات تجارية الخليج, تطوير مواقع مصر, وكالة رقمية دبي, وكالة تسويق القاهرة, إعلان الرياض, تسويق رقمي الكويت, تسويق قطر, إعلان البحرين, وكالة رقمية عمان, تسويق الأردن, إعلان لبنان, تسويق رقمي المغرب',
   },
 };

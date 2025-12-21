@@ -9,9 +9,14 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import dynamic from 'next/dynamic';
 import { Cairo, Inter, Space_Grotesk } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
 import '../globals.css';
 
 const ChatbotWidget = dynamic(() => import('@/components/chatbot-widget').then(mod => mod.ChatbotWidget), {
+  ssr: false,
+});
+
+const SchemaOrg = dynamic(() => import('@/components/schema-org').then(mod => mod.SchemaOrg), {
   ssr: false,
 });
 
@@ -83,12 +88,34 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google-site-verification" content="your-verification-code" />
         <link rel="preconnect" href="https://backend.zynk-adv.com" />
         <link rel="dns-prefetch" href="https://backend.zynk-adv.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/_next/static/media/36966cca54120369-s.p.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body className={`${spaceGrotesk.variable} ${inter.variable} ${cairo.variable} ${locale === 'ar' ? 'font-arabic' : 'font-body'}`} suppressHydrationWarning>
+        {/* Google Analytics 4 - Replace G-XXXXXXXXXX with your actual GA4 ID */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX', {
+              page_path: window.location.pathname,
+              page_title: document.title,
+              language: '${locale}'
+            });
+          `}
+        </Script>
+        
+        <SchemaOrg locale={locale as 'en' | 'ar'} />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -5,11 +5,16 @@ RewriteEngine On
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Explicitly serve static files (favicon, images, fonts, etc.)
+# This prevents them from being routed to index.html
+RewriteCond %{REQUEST_URI} \.(ico|png|jpg|jpeg|gif|svg|webp|css|js|woff|woff2|ttf|eot|json|xml|txt|pdf)$ [NC]
+RewriteRule ^ - [L]
+
 # Serve existing files and directories directly
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Route all requests to index.html for client-side routing
+# Route all other requests to index.html for client-side routing
 RewriteRule ^(.*)$ /index.html [L]
 
 # Set default charset

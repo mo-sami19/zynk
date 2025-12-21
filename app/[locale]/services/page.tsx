@@ -7,16 +7,16 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const locale = params.locale as 'en' | 'ar';
   
   const title = locale === 'en' 
-    ? 'Our Services - Digital Marketing Solutions | Zynk'
-    : 'خدماتنا - حلول التسويق الرقمي | زينك';
+    ? 'Digital Marketing Services Egypt | ZYNK Advertising Cairo'
+    : 'خدمات التسويق الرقمي مصر | زينك للإعلان القاهرة';
   
   const description = locale === 'en'
-    ? 'Explore our comprehensive digital marketing services: SEO, social media marketing, web development, content creation, branding, and more. Tailored solutions for your business growth.'
-    : 'استكشف خدمات التسويق الرقمي الشاملة لدينا: تحسين محركات البحث، التسويق عبر وسائل التواصل الاجتماعي، تطوير المواقع، إنشاء المحتوى، العلامات التجارية، والمزيد. حلول مخصصة لنمو عملك.';
+    ? 'ZYNK Advertising offers comprehensive digital marketing services in Egypt: SEO, social media marketing, performance marketing, web development, branding, and content creation. Professional solutions for Egyptian businesses in Cairo, Alexandria & beyond.'
+    : 'تقدم زينك للإعلان خدمات تسويق رقمي شاملة في مصر: تحسين محركات البحث، التسويق عبر وسائل التواصل الاجتماعي، التسويق بالأداء، تطوير المواقع، العلامات التجارية، وإنشاء المحتوى. حلول احترافية للشركات المصرية في القاهرة والإسكندرية وما بعدها.';
   
   const keywords = locale === 'en'
-    ? 'digital marketing services, SEO services, social media marketing, web development, content marketing, branding services, digital solutions'
-    : 'خدمات التسويق الرقمي, خدمات تحسين محركات البحث, التسويق عبر وسائل التواصل الاجتماعي, تطوير المواقع, تسويق المحتوى, خدمات العلامات التجارية, الحلول الرقمية';
+    ? 'digital marketing services Egypt, SEO services Cairo, social media marketing Egypt, web development Cairo, branding agency Egypt, ZYNK Advertising services, performance marketing Egypt, content marketing Cairo'
+    : 'خدمات التسويق الرقمي مصر, خدمات SEO القاهرة, التسويق عبر وسائل التواصل الاجتماعي مصر, تطوير المواقع القاهرة, وكالة علامات تجارية مصر, خدمات زينك للإعلان, التسويق بالأداء مصر, تسويق المحتوى القاهرة';
   
   return generatePageMetadata({
     locale,
