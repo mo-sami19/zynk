@@ -56,14 +56,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ar';
   const metadata = defaultMetadata[locale];
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zynk-adv.com';
   
-  return generatePageMetadata({
-    locale,
-    title: metadata.title,
-    description: metadata.description,
-    keywords: metadata.keywords,
-    path: '',
-  });
+  return {
+    metadataBase: new URL(baseUrl),
+    ...generatePageMetadata({
+      locale,
+      title: metadata.title,
+      description: metadata.description,
+      keywords: metadata.keywords,
+      path: '',
+    }),
+  };
 }
 
 export default async function LocaleLayout({

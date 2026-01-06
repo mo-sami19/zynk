@@ -9,7 +9,8 @@ export const dynamic = 'force-dynamic';
 export async function generateMetadata({ params }: { params: { locale: string; slug: string } }): Promise<Metadata> {
   try {
     const response = await projectsApi.getBySlug(params.slug);
-    const project = response as any;
+    const projectData = (response as any)?.data || response;
+    const project = projectData;
     
     if (!project) {
       return {
@@ -19,8 +20,36 @@ export async function generateMetadata({ params }: { params: { locale: string; s
     }
 
     const locale = params.locale as 'en' | 'ar';
-    const title = project.seo?.meta_title?.[locale] || project.title?.[locale] || project.title?.en || 'Project';
-    const description = project.seo?.meta_description?.[locale] || project.description?.[locale] || project.description?.en || '';
+    
+    // Extract title with multiple fallback options
+    let title = '';
+    if (project.seo?.meta_title) {
+      title = typeof project.seo.meta_title === 'string' 
+        ? project.seo.meta_title 
+        : (project.seo.meta_title[locale] || project.seo.meta_title.en || project.seo.meta_title.ar);
+    }
+    if (!title && project.title) {
+      title = typeof project.title === 'string' 
+        ? project.title 
+        : (project.title[locale] || project.title.en || project.title.ar);
+    }
+    if (!title) {
+      title = locale === 'ar' ? 'مشروع' : 'Project';
+    }
+    
+    // Extract description with multiple fallback options
+    let description = '';
+    if (project.seo?.meta_description) {
+      description = typeof project.seo.meta_description === 'string'
+        ? project.seo.meta_description
+        : (project.seo.meta_description[locale] || project.seo.meta_description.en || project.seo.meta_description.ar);
+    }
+    if (!description && project.description) {
+      description = typeof project.description === 'string'
+        ? project.description
+        : (project.description[locale] || project.description.en || project.description.ar);
+    }
+    
     const keywords = project.tags?.join(', ') || '';
     const thumbnail = typeof project.thumbnail === 'object' ? project.thumbnail.default : project.thumbnail;
 

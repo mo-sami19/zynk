@@ -1,4 +1,4 @@
-import { postsApi } from '@/lib/api'
+import { postsApi, projectsApi, servicesApi } from '@/lib/api'
 import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -17,6 +17,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/en/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/ar/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/en/services`,
@@ -116,11 +128,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  // Dynamic blog posts
+  // Dynamic content arrays
+  let blogPages: MetadataRoute.Sitemap = []
+  let servicePages: MetadataRoute.Sitemap = []
+  let projectPages: MetadataRoute.Sitemap = []
+
+  // Fetch dynamic blog posts
   try {
     const response = await postsApi.getAll()
     const posts = (response as any).data || response
-    const blogPages = posts.flatMap((post: any) => [
+    blogPages = posts.flatMap((post: any) => [
       {
         url: `${baseUrl}/en/blog/${post.slug}`,
         lastModified: new Date(post.updated_at || post.published_at || new Date()),
@@ -134,10 +151,53 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
       },
     ])
-
-    return [...staticPages, ...blogPages]
   } catch (error) {
-    console.error('Error generating sitemap:', error)
-    return staticPages
+    console.error('Error fetching blog posts for sitemap:', error)
   }
+
+  // Fetch dynamic services
+  try {
+    const response = await servicesApi.getAll()
+    const services = (response as any).data || response
+    servicePages = services.flatMap((service: any) => [
+      {
+        url: `${baseUrl}/en/services/${service.slug}`,
+        lastModified: new Date(service.updated_at || new Date()),
+        changeFrequency: 'monthly' as const,
+        priority: 0.85,
+      },
+      {
+        url: `${baseUrl}/ar/services/${service.slug}`,
+        lastModified: new Date(service.updated_at || new Date()),
+        changeFrequency: 'monthly' as const,
+        priority: 0.85,
+      },
+    ])
+  } catch (error) {
+    console.error('Error fetching services for sitemap:', error)
+  }
+
+  // Fetch dynamic projects
+  try {
+    const response = await projectsApi.getAll()
+    const projects = (response as any).data || response
+    projectPages = projects.flatMap((project: any) => [
+      {
+        url: `${baseUrl}/en/projects/${project.slug}`,
+        lastModified: new Date(project.updated_at || new Date()),
+        changeFrequency: 'monthly' as const,
+        priority: 0.75,
+      },
+      {
+        url: `${baseUrl}/ar/projects/${project.slug}`,
+        lastModified: new Date(project.updated_at || new Date()),
+        changeFrequency: 'monthly' as const,
+        priority: 0.75,
+      },
+    ])
+  } catch (error) {
+    console.error('Error fetching projects for sitemap:', error)
+  }
+
+  return [...staticPages, ...blogPages, ...servicePages, ...projectPages]
 }

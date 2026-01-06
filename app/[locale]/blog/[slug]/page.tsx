@@ -20,7 +20,8 @@ export async function generateMetadata({ params }: { params: { locale: string; s
   try {
     // Fetch post data from API
     const response = await postsApi.getBySlug(params.slug);
-    const post = response as any; // Use any to handle dynamic API response
+    const postData = (response as any)?.data || response;
+    const post = postData;
     
     if (!post) {
       return {
@@ -29,10 +30,43 @@ export async function generateMetadata({ params }: { params: { locale: string; s
       };
     }
 
-    // Get localized SEO data
+    // Get localized SEO data with better fallback handling
     const locale = params.locale as 'en' | 'ar';
-    const title = post.seo?.meta_title?.[locale] || post.title?.[locale] || post.title?.en || 'Blog Post';
-    const description = post.seo?.meta_description?.[locale] || post.excerpt?.[locale] || post.excerpt?.en || '';
+    
+    // Extract title with multiple fallback options
+    let title = '';
+    if (post.seo?.meta_title) {
+      title = typeof post.seo.meta_title === 'string' 
+        ? post.seo.meta_title 
+        : (post.seo.meta_title[locale] || post.seo.meta_title.en || post.seo.meta_title.ar);
+    }
+    if (!title && post.title) {
+      title = typeof post.title === 'string' 
+        ? post.title 
+        : (post.title[locale] || post.title.en || post.title.ar);
+    }
+    if (!title) {
+      title = locale === 'ar' ? 'مقالة مدونة' : 'Blog Post';
+    }
+    
+    // Extract description with multiple fallback options
+    let description = '';
+    if (post.seo?.meta_description) {
+      description = typeof post.seo.meta_description === 'string'
+        ? post.seo.meta_description
+        : (post.seo.meta_description[locale] || post.seo.meta_description.en || post.seo.meta_description.ar);
+    }
+    if (!description && post.excerpt) {
+      description = typeof post.excerpt === 'string'
+        ? post.excerpt
+        : (post.excerpt[locale] || post.excerpt.en || post.excerpt.ar);
+    }
+    if (!description && post.description) {
+      description = typeof post.description === 'string'
+        ? post.description
+        : (post.description[locale] || post.description.en || post.description.ar);
+    }
+    
     const keywords = post.tags?.join(', ') || '';
     const thumbnail = typeof post.thumbnail === 'object' ? post.thumbnail.default : post.thumbnail;
 
