@@ -10,6 +10,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { ChatInput } from './chat-input';
 
 interface Message {
+  id: string;
   role: 'user' | 'bot';
   content: string;
   timestamp: Date;
@@ -56,16 +57,27 @@ export function ChatbotWidget() {
 
 
   const addBotMessage = useCallback((content: string) => {
-    setMessages(prev => [...prev, { role: 'bot', content, timestamp: new Date() }]);
+    setMessages(prev => [...prev, { 
+      id: `bot-${Date.now()}-${Math.random()}`,
+      role: 'bot', 
+      content, 
+      timestamp: new Date() 
+    }]);
   }, []);
 
   const addUserMessage = useCallback((content: string) => {
-    setMessages(prev => [...prev, { role: 'user', content, timestamp: new Date() }]);
+    setMessages(prev => [...prev, { 
+      id: `user-${Date.now()}-${Math.random()}`,
+      role: 'user', 
+      content, 
+      timestamp: new Date() 
+    }]);
   }, []);
 
   const handleBotResponse = useCallback((response: ChatbotResponse) => {
     if (response.success && response.data) {
       const { session_id, message, suggested_actions, is_complete, language } = response.data;
+      
       setChatState(prev => ({
         ...prev,
         sessionId: session_id,
@@ -448,9 +460,9 @@ export function ChatbotWidget() {
             </div>
 
             <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-              {messages.map((msg, index) => (
+              {messages.map((msg) => (
                 <motion.div
-                  key={index}
+                  key={msg.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2 }}

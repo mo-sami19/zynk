@@ -51,3 +51,4 @@ next-env.d.ts
 /zynk-webstie
 
 # Exclude large ZIP files
+*.zip
